@@ -6,5 +6,5 @@ Item.create([
   {description: "Linen Jogger Pant", photo_url:"http://athleta.gap.com/webcontent/0009/594/940/cn9594940.jpg", value:"79.00", brand:"Athleta", size: "4", fabric:"Linen", garment_care:"Machine wash"},
   {description:"DOE Parka", photo_url:"http://cdn.shopify.com/s/files/1/1038/9388/products/Doe_Female_Parka_large.png?v=1459463423", value:"675.00", brand:"Mammoth Outerwear", size:"S", fabric:"PolyCotton", garment_care:"Dry clean"},
   {description:"White Circle Shirt", photo_url:"http://static1.squarespace.com/static/56338447e4b0bd1d35bf1aa3/56339741e4b0a850f6952461/569e832ed8af102cbcb0cb8a/1453228848834/shirt2edit.jpg?format=300w", brand:"Miakoda", value:"68.00", size:"OS", fabric:"Organic Bamboo & Cotton Blend", garment_care:"Machine wash cold, tumble dry medium, cool iron if needed, do not bleach"},
-
+  {description:"Mabel Boot", photo_url:"http://www.mooshoes.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/M/A/MAB-blk_37817.jpg", brand:"Novacas", value:"165.00", size:"8", fabric:"Microfiber faux leather upper/Rubber sole", garment_care:"Spot clean"}
   ])

@@ -1,12 +1,13 @@
 body{
-  font-family: helvetica, sans-serif;
+  font-family: times new roman, sans-serif;
   font-weight: lighter;
   margin-top: 13vh;
 }
 header{
   font-size: 7.5vh;
-  letter-spacing: 2vw;
+  letter-spacing: 2.5vw;
   padding-left:2vw;
+  padding-top: 0;
   background-color: black;
   color:white;
   width:100vw;
@@ -14,6 +15,7 @@ header{
   position:fixed;
   top:0;
   left:0;
+  text-align: left;
 }
 nav{
   font-size: 3vh;
@@ -26,6 +28,7 @@ nav{
   position:fixed;
   top:8.5vh;
   left:0;
+  float: right;
 }
 li.nav{
   margin-right: 6vw;
@@ -33,13 +36,67 @@ li.nav{
 }
 section.index{
   width:100vw;
-  height: 35vh;
+  height: 25vh;
   margin:0;
+  padding:0;
   top:0;
   left:0;
+  overflow: scroll;
+  display:flex;
+  box-sizing: border-box;
 }
-img{
+section.index a{
+  height:inherit;
+}
+section.index img{
   height:inherit;
   margin:0;
+}
+section.indexshow img{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity:0.7;
+}
+section.indexshow img.thisitem{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  opacity: 1;
+  /*border-left: 3px solid black;
+  border-top: 3px solid black;*/
+}
+section.indexshow img:hover{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+section.show{
+  width:100vw;
+  height:50vh;
+  top:0;
+  display:flex;
+  box-sizing: border-box;
 
+  font-size: 2vw;
+}
+div.image{
+  width:33.3%;
+  height: inherit;
+  top:0;
+  left:0px;
+  position:relative;
+}
+div.image img {
+  max-width: 90%;
+  max-height:90%;
+  padding: 5%;
+}
+div.specs{
+  width:33.3%;
+  height: inherit;
+  position: relative;
+  padding:2.5%;
+}
+div.comments{
+  width:33.3%;
+  height: inherit;
+  position: relative;
 }
