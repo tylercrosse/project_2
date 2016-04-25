@@ -3,11 +3,18 @@
 </section>
 <section class="show">
 
-<div class="image">
+<!-- <div class="image">
 <%= image_tag(@item.photo_url) %>
-</div>
+</div> -->
 <div class="specs">
-<%= @item.description %>
+<%= link_to 'Edit', edit_item_path(@item) %>
+<%= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
+<li class="specs">Description: <%= @item.description %></li>
+<li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
+<li class="specs">Brand: <%= @item.brand %></li>
+<li class="specs">Size: <%= @item.size %></li>
+<li class="specs">Composition: <%= @item.fabric %></li>
+<li class="specs">Care: <%= @item.garment_care %></li>
 </div>
 <div class="comments">
 </div>

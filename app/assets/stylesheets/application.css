@@ -3,6 +3,10 @@ body{
   font-weight: lighter;
   margin-top: 13vh;
 }
+nav a, nav a:visited, nav a:hover{
+  text-decoration: none;
+  color:white;
+}
 header{
   font-size: 7.5vh;
   letter-spacing: 2.5vw;
@@ -36,7 +40,7 @@ li.nav{
 }
 section.index{
   width:100vw;
-  height: 25vh;
+  height: 30vh;
   margin:0;
   padding:0;
   top:0;
@@ -55,7 +59,7 @@ section.index img{
 section.indexshow img{
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  opacity:0.7;
+  opacity:0.5;
 }
 section.indexshow img.thisitem{
   -webkit-filter: grayscale(0%);
@@ -65,38 +69,59 @@ section.indexshow img.thisitem{
   border-top: 3px solid black;*/
 }
 section.indexshow img:hover{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 1;
+}
+section.indexshow img.thisitem:hover{
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
+  opacity: 1;
 }
 section.show{
   width:100vw;
-  height:50vh;
+  height:45vh;
   top:0;
   display:flex;
   box-sizing: border-box;
-
-  font-size: 2vw;
+  font-size: 3.3vh;
+  line-height: 4.5vh;
+  letter-spacing: 1px;
+  overflow: scroll;
+}
+section.edit{
+  width:100vw;
+  height:45vh;
+  top:0;
+  display:flex;
+  box-sizing: border-box;
+  font-size: 2vh;
+  line-height: 3vh;
+  letter-spacing: 1px;
 }
 div.image{
-  width:33.3%;
+  width:20%;
   height: inherit;
   top:0;
   left:0px;
   position:relative;
 }
-div.image img {
+/*div.image img {
   max-width: 90%;
   max-height:90%;
   padding: 5%;
-}
+}*/
 div.specs{
-  width:33.3%;
+  width:40%;
   height: inherit;
   position: relative;
   padding:2.5%;
 }
 div.comments{
-  width:33.3%;
+  width:40%;
   height: inherit;
   position: relative;
+}
+li.specs{
+  list-style: none;
 }
