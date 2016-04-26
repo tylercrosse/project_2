@@ -1,0 +1,4 @@
+<%= form_for([@item, @item.notes.build]) do |f| %>
+<%= f.text_area :body %><br>
+<%= f.submit %>
+<% end %>

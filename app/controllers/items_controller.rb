@@ -1,12 +1,35 @@
 class ItemsController < ApplicationController
 def index
-  @items = Item.all
-  @item
+  @items = Item.where(archive: false)
+end
+
+def closet
+  @items = Item.where(wishlist: false)
+  render :index
+end
+
+def wishlist
+  @items = Item.where(wishlist: true)
+  render :index
 end
 
 def show
   @items = Item.all
   @item = Item.find(params[:id])
+end
+
+def add_to_wishlist
+  @item = Item.find(params[:id])
+  @item.update(wishlist: true)
+
+  redirect_to wishlist_items_path, notice: "Added to wishlist"
+end
+
+def add_to_closet
+  @item = Item.find(params[:id])
+  @item.update(wishlist: false)
+
+  redirect_to items_path, notice: "Added to closet"
 end
 
 def new
@@ -44,6 +67,6 @@ end
 
 private
 def item_params
-  params.require(:item).permit(:description, :photo_url, :value, :brand, :size, :fabric, :garment_care)
+  params.require(:item).permit(:description, :photo_url, :value, :brand, :size, :fabric, :garment_care, :wishlist)
 end
 end

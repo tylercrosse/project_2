@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :size
       t.string :fabric
       t.string :garment_care
-      t.boolean :wishlist, :default => true
+      t.boolean :wishlist, :default => false
       t.boolean :archive, :default => false
       t.datetime :created_at
     end

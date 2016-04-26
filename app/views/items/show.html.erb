@@ -1,21 +1,32 @@
-<section class="index indexshow">
-<%= render 'index' %>
+<section class="indexshow">
+<%= render 'items' %>
 </section>
 <section class="show">
 
-<!-- <div class="image">
-<%= image_tag(@item.photo_url) %>
+  <!-- <div class="image">
+  <%= image_tag(@item.photo_url) %>
 </div> -->
 <div class="specs">
-<%= link_to 'Edit', edit_item_path(@item) %>
-<%= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
-<li class="specs">Description: <%= @item.description %></li>
-<li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
-<li class="specs">Brand: <%= @item.brand %></li>
-<li class="specs">Size: <%= @item.size %></li>
-<li class="specs">Composition: <%= @item.fabric %></li>
-<li class="specs">Care: <%= @item.garment_care %></li>
-</div>
-<div class="comments">
-</div>
+  <li class="specs">Description: <%= @item.description %></li>
+  <li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
+  <li class="specs">Brand: <%= @item.brand %></li>
+  <li class="specs">Size: <%= @item.size %></li>
+  <li class="specs">Composition: <%= @item.fabric %></li>
+  <li class="specs">Care: <%= @item.garment_care %></li>
+  <%= link_to 'Edit', edit_item_path(@item) %>
+  <%= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
+  <% if !@item.wishlist %>
+    <%= link_to 'Move to wishlist', add_to_wishlist_item_path(@item), method: :put%>
+    <% else %>
+    <%= link_to 'Move to closet', add_to_closet_item_path(@item), method: :put%>
+    <% end %>
+  </div>
+  <div class="notes">
+    <% if @item.notes.length > 0 %>
+    <p>Notes</p>
+    <li class="notes"><%= render @item.notes %></li>
+    <% end %>
+    <p>Add a note</p>
+    <%= render 'notes/form' %>
+  </div>
 </section>

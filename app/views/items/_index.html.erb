@@ -1,8 +1,0 @@
-<% @items.each do |item| %>
-<% if @item && item.id == @item.id %>
-<%= image_tag(@item.photo_url, class: "thisitem") %>
-<% end %>
-<% unless @item && item.id == @item.id %>
-<%= link_to image_tag(item.photo_url), item_path(item) %>
-<% end %>
-<% end %>

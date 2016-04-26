@@ -1,7 +1,9 @@
-<section class="index indexshow">
-<%= render 'index' %>
+<section class="indexshow">
+  <%= render 'items' %>
 </section>
 
 <section class="edit">
-<%= render 'form'%>
+  <%= render 'form' %>
 </section>
+
+<span class="edit"><%= link_to 'Go back', item_path(@item) %></span>

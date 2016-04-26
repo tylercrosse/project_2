@@ -5,16 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <a href="/">
 <header>
-  aeterna
+  A<span>ETERNA</span>
 </header></a>
 <nav>
 <li class="nav link">about</li>
-<li class="nav link"><%= link_to 'closet', items_path %></li>
-<li class="nav link">wishlist</li>
+<li class="nav link"><%= link_to 'closet', closet_items_path %></li>
+<li class="nav link"><%= link_to 'wishlist', wishlist_items_path %></li>
 <li class="nav link">archive</li>
 <li class="nav link"><%= link_to 'add', new_item_path %></li>
 </nav>
