@@ -8,14 +8,16 @@ def closet
   render :index
 end
 
+def add_to_closet
+  @item = Item.find(params[:id])
+  @item.update(wishlist: false)
+
+  redirect_to items_path, notice: "Added to closet"
+end
+
 def wishlist
   @items = Item.where(wishlist: true)
   render :index
-end
-
-def show
-  @items = Item.all
-  @item = Item.find(params[:id])
 end
 
 def add_to_wishlist
@@ -25,11 +27,9 @@ def add_to_wishlist
   redirect_to wishlist_items_path, notice: "Added to wishlist"
 end
 
-def add_to_closet
+def show
+  @items = Item.all
   @item = Item.find(params[:id])
-  @item.update(wishlist: false)
-
-  redirect_to items_path, notice: "Added to closet"
 end
 
 def new

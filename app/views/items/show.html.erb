@@ -1,6 +1,7 @@
 <section class="indexshow">
-<%= render 'items' %>
+  <%= render 'items' %>
 </section>
+
 <section class="show">
 
   <!-- <div class="image">
@@ -16,11 +17,12 @@
   <%= link_to 'Edit', edit_item_path(@item) %>
   <%= link_to 'Delete', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
   <% if !@item.wishlist %>
-    <%= link_to 'Move to wishlist', add_to_wishlist_item_path(@item), method: :put%>
+      <%= link_to 'Move to wishlist', add_to_wishlist_item_path(@item), method: :put%>
     <% else %>
-    <%= link_to 'Move to closet', add_to_closet_item_path(@item), method: :put%>
+      <%= link_to 'Move to closet', add_to_closet_item_path(@item), method: :put%>
     <% end %>
   </div>
+
   <div class="notes">
     <% if @item.notes.length > 0 %>
     <p>Notes</p>
