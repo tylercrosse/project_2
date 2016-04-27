@@ -12,7 +12,7 @@
   <li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
   <li class="specs">Brand: <%= @item.brand %></li>
   <li class="specs">Size: <%= @item.size %></li>
-  <li class="specs">Composition: <%= @item.fabric %></li>
+  <li class="specs">Composition: <%= @item.composition %></li>
   <li class="specs">Care: <%= @item.garment_care %></li>
   <%= link_to 'Change', edit_item_path(@item) %>
   <%= link_to 'Discard', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>

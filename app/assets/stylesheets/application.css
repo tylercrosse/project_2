@@ -123,9 +123,8 @@ section.edit{
   font-size: 2vh;
   line-height: 3vh;
   letter-spacing: 1px;
-}
-span.edit{
-  padding-left: 1vw;
+  overflow: scroll;
+  position:relative;
 }
 section.new, h2.new{
   padding-left: 2vw;
@@ -142,7 +141,7 @@ div.image{
   max-height:90%;
   padding: 5%;
 }*/
-div.specs{
+div.specs, div.edit{
   width:45%;
   height: inherit;
   position: relative;

@@ -3,7 +3,9 @@
 </section>
 
 <section class="edit">
+<div class="edit">
   <%= render 'form' %>
-</section>
+  <p><%= link_to 'Go back', item_path(@item) %></p>
+</div>
 
-<span class="edit"><%= link_to 'Go back', item_path(@item) %></span>
+</section>

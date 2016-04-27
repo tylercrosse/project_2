@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426235552) do
+ActiveRecord::Schema.define(version: 20160427130720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160426235552) do
     t.decimal  "value",        precision: 6, scale: 2
     t.string   "brand"
     t.string   "size"
-    t.string   "fabric"
+    t.string   "composition"
     t.string   "garment_care"
     t.boolean  "wishlist",                             default: false
     t.boolean  "archive",                              default: false
@@ -30,19 +30,12 @@ ActiveRecord::Schema.define(version: 20160426235552) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.string   "author"
     t.text     "body"
     t.integer  "item_id"
     t.datetime "created_at"
   end
 
   add_index "notes", ["item_id"], name: "index_notes_on_item_id", using: :btree
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   add_foreign_key "notes", "items"
 end
