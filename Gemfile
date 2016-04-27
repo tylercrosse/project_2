@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 gem "rails_12factor", group: :production
+gem "carrierwave"
+gem 'fog' # tells carrierwave to upload to S3 instead of local public folder
+gem 'figaro' # allows us to obscure secret keys and tokens.
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets

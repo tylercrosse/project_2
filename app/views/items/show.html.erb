@@ -5,30 +5,41 @@
 <section class="show">
 
   <!-- <div class="image">
-  <%= image_tag(@item.photo_url) %>
+  <%= image_tag(@item.image) %>
 </div> -->
-<div class="specs">
-  <li class="specs">Description: <%= @item.description %></li>
-  <li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
-  <li class="specs">Brand: <%= @item.brand %></li>
-  <li class="specs">Size: <%= @item.size %></li>
-  <li class="specs">Composition: <%= @item.composition %></li>
-  <li class="specs">Care: <%= @item.garment_care %></li>
-  <%= link_to 'Change', edit_item_path(@item) %>
-  <%= link_to 'Discard', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
-  <% if !@item.wishlist %>
+  <div class="specs">
+    <li class="specs">Description: <%= @item.description %></li>
+    <li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
+    <li class="specs">Brand: <%= @item.brand %></li>
+    <li class="specs">Size: <%= @item.size %></li>
+    <li class="specs">Composition: <%= @item.composition %></li>
+    <li class="specs">Care: <%= @item.garment_care %></li>
+
+    <%= link_to 'Change', edit_item_path(@item) %>
+    <%= link_to 'Discard', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
+    <% if !@item.wishlist %>
       <%= link_to '+ Wishlist', add_to_wishlist_item_path(@item), method: :put%>
     <% else %>
       <%= link_to '+ Closet', add_to_closet_item_path(@item), method: :put%>
     <% end %>
+
+
   </div>
 
   <div class="notes">
     <% if @item.notes.length > 0 %>
-    <p>Notes</p>
-    <li class="notes"><%= render @item.notes %></li>
+      <p>Notes</p>
+      <li class="notes"><%= render @item.notes %></li>
     <% end %>
-    <p>Add a note</p>
-    <%= render 'notes/form' %>
+
+      <%= render 'notes/form' %>
+
+      <p>
+        Tags: <% @item.taggings.each do |tagging| %>
+          <span><%= link_to tagging.tag.name, tag_path(tagging.tag) %></span>
+        <% end %>
+      </p>
+
+      <%= render 'taggings/form' %>
   </div>
 </section>

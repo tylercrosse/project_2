@@ -30,6 +30,7 @@ end
 def show
   @items = Item.all
   @item = Item.find(params[:id])
+  @tagging = Tagging.new
 end
 
 def new
@@ -67,6 +68,6 @@ end
 
 private
 def item_params
-  params.require(:item).permit(:description, :photo_url, :value, :brand, :size, :fabric, :garment_care, :wishlist)
+  params.require(:item).permit(:description, :image, :value, :brand, :size, :fabric, :garment_care, :wishlist)
 end
 end
