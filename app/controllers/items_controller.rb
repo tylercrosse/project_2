@@ -12,7 +12,7 @@ def add_to_closet
   @item = Item.find(params[:id])
   @item.update(wishlist: false)
 
-  redirect_to items_path, notice: "Added to closet"
+  redirect_to items_path, notice: "Item added to closet"
 end
 
 def wishlist
@@ -24,7 +24,7 @@ def add_to_wishlist
   @item = Item.find(params[:id])
   @item.update(wishlist: true)
 
-  redirect_to wishlist_items_path, notice: "Added to wishlist"
+  redirect_to wishlist_items_path, notice: "Item added to wishlist"
 end
 
 def show
@@ -39,7 +39,7 @@ end
 def create
   @item = Item.create(item_params)
   if @item.save
-    redirect_to @item, notice: "Item Successfully Created"
+    redirect_to @item, notice: "New Item Created"
   else
     render 'new'
   end
@@ -53,7 +53,7 @@ end
 def update
   @item = Item.find(params[:id])
   if @item.update(item_params)
-    redirect_to @item, notice: "Item Successfully Updated"
+    redirect_to @item, notice: "Item Successfully Changed"
   else
     render 'edit'
   end
@@ -62,7 +62,7 @@ end
 def destroy
   @item = Item.find(params[:id])
   @item.destroy
-  redirect_to items_path, notice: "Item Successfully Discarded"
+  redirect_to items_path, notice: "Item Discarded"
 end
 
 private

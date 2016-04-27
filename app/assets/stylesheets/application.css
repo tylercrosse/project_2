@@ -149,9 +149,11 @@ div.specs{
   padding:2.5%;
 }
 div.specs a, div.specs a:visited, div.specs a:hover{
-  font-size: 2vh;
+  font-size: 2.5vh;
   color:black;
+  font-weight: bold;
   text-decoration: underline;
+  margin: 1vw;
 }
 div.notes{
   width:45%;
@@ -162,12 +164,31 @@ li.specs, li.notes{
   list-style: none;
 }
 div.note{
-  border: 1px solid lightgrey;
+  background-color: grey;
+  color:white;
   font-size: 2vh;
-  padding: 1vh;
+  padding: 1vw;
+  margin: 1vw;
   width:60%;
+}
+span.delete_note a, span.delete_note a:visited{
+  font-family: arial, sans-serif;
+  text-align: right;
+  text-decoration: none;
+  color:white;
+  display:block;
+  font-size: 2vh;
+  line-height: 2vh;
+}
+span.delete_note a:hover{
+  color:black;
+}
+span.notebody{
+  margin-left: 2vw;
+  font-size: 2.5vh;
 }
 span.note{
   font-style: italic;
   font-size: 1.5vh;
+  display:block;
 }

@@ -42,6 +42,11 @@
     <%= f.text_field :garment_care %>
   </p>
   <p>
+    <%= f.label :wishlist, "Add to: Closet" %>
+    <%= f.radio_button :wishlist, false, :value => true %>
+    <%= f.label :wishlist, "Wishlist" %>
+    <%= f.radio_button :wishlist, true, :value => true %>
+  <p>
     <%= f.submit%>
   </p>
   <% end %>
