@@ -1,16 +1,18 @@
-<h2>Archives</h2>
-
 <section class="new">
-  <% @items.each do |item| %>
-    <p>
-      <%= item.description %>
-      <%= link_to '(restore)', add_to_closet_item_path(item), method: :put %>
-    </p>
-      <% if item.notes.length > 0 %>
-        <p>Notes: </p>
-      <% end %>
-          <% item.notes.each do |note| %>
-            <li><%= note.body %></li>
-          <% end %>
-  <% end %>
+  <h2>Archives</h2>
+
+  <div class="specs">
+    <% @items.each do |item| %>
+      <p>
+        <%= item.description %>
+        <%= link_to '(restore)', add_to_closet_item_path(item), method: :put %>
+      </p>
+        <% if item.notes.length > 0 %>
+          <p>Notes: </p>
+        <% end %>
+            <% item.notes.each do |note| %>
+              <li><%= note.body %></li>
+            <% end %>
+    <% end %>
+  </div>
 </section>

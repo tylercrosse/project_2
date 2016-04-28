@@ -1,0 +1,29 @@
+  <li class="specs description"><%= @item.description %></li>
+  <% if @item.value %>
+    <li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
+  <% end %>
+
+  <% if @item.brand && @item.brand.length > 0 %>
+    <li class="specs">Brand: <%= @item.brand %></li>
+  <% end %>
+
+  <% if @item.size && @item.size.length > 0 %>
+    <li class="specs">Size: <%= @item.size %></li>
+  <% end %>
+
+  <% if @item.composition && @item.composition.length > 0 %>
+    <li class="specs">Composition: <%= @item.composition %></li>
+  <% end %>
+
+  <% if @item.garment_care && @item.garment_care.length > 0 %>
+    <li class="specs">Care: <%= @item.garment_care %></li>
+  <% end %>
+
+  <%= link_to 'Change', edit_item_path(@item) %>
+  <%= link_to 'Discard', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
+  <%= link_to 'Archive', add_to_archive_item_path(@item), method: :put%>
+    <% if !@item.wishlist %>
+      <%= link_to '+ Wishlist', add_to_wishlist_item_path(@item), method: :put%>
+    <% else %>
+    <%= link_to '+ Closet', add_to_closet_item_path(@item), method: :put%>
+  <% end %>

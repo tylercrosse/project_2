@@ -1,0 +1,48 @@
+body {
+  font-family: 'Poiret One', sans-serif;
+  font-weight: lighter;
+  margin-top: 14vh;
+  margin-left:0;
+}
+nav a, nav a:visited, nav a:hover {
+  text-decoration: none;
+  color:white;
+}
+header {
+  font-family: 'Cinzel', serif;
+  font-weight: normal;
+  font-size: 7.5vh;
+  line-height:7.5vh;
+  letter-spacing: 2.5vw;
+  padding-top: 0;
+  padding-left:2vw;
+  background-color: white;
+  color:black;
+  width:100vw;
+  position:fixed;
+  top:0;
+  left:0;
+}
+header span {
+  font-size: 5.5vh;
+}
+nav {
+  font-family: dosis, sans-serif;
+  font-size: 3vh;
+  letter-spacing: 0.5vw;
+  line-height: 5vh;
+  padding-left: 5vw;
+  background-color: black;
+  color:white;
+  width:100vw;
+  height:5vh;
+  position:fixed;
+  top:7.5vh;
+  left:0;
+  border-top: 3px double white;
+  border-bottom: 3px double white;
+}
+li.nav{
+  margin-right: 6vw;
+  display:inline;
+}

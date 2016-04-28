@@ -1,48 +1,21 @@
 <section class="indexshow">
+
   <%= render 'items' %>
+
 </section>
 
 <section class="show">
 
-  <!-- <div class="image">
-  <%= image_tag(@item.image) %>
-</div> -->
   <div class="specs">
-    <li class="specs">Description: <%= @item.description %></li>
-    <li class="specs">Estimated value: <%= number_to_currency(@item.value, :unit => "$") %></li>
-    <li class="specs">Brand: <%= @item.brand %></li>
-    <li class="specs">Size: <%= @item.size %></li>
-    <li class="specs">Composition: <%= @item.composition %></li>
-    <li class="specs">Care: <%= @item.garment_care %></li>
-
-    <%= link_to 'Change', edit_item_path(@item) %>
-    <%= link_to 'Discard', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
-    <%= link_to 'Archive', add_to_archive_item_path(@item), method: :put%>
-    <% if !@item.wishlist %>
-      <%= link_to '+ Wishlist', add_to_wishlist_item_path(@item), method: :put%>
-    <% else %>
-      <%= link_to '+ Closet', add_to_closet_item_path(@item), method: :put%>
-    <% end %>
-
-
+    <%= render 'item' %>
   </div>
 
-  <div class="notes">
-    <% if @item.notes.length > 0 %>
-      <p>Notes</p>
-      <li class="notes"><%= render @item.notes %></li>
-    <% end %>
+  <%= render 'notes/notes' %>
 
-      <%= render 'notes/form' %>
+  <%= render 'notes/form' %>
 
-      <p>
-        Tags <% @item.taggings.each do |tagging| %>
-          <span class="tag">
-            <%= link_to tagging.tag.name.downcase, tag_path(tagging.tag), :class =>"showtag" %><%= link_to 'x', [tagging.item, tagging],
-            method: :delete, :title => "Delete Tag", :class => "deletetag"%>
-        <% end %>
-      </p>
+  <%= render 'taggings/show' %>
 
-      <%= render 'taggings/form' %>
-  </div>
+  <%= render 'taggings/form' %>
+
 </section>

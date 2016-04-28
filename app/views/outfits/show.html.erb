@@ -1,18 +1,20 @@
+<section class="new">
   <h2><%= @outfit.name %></h2>
   <section class="index">
 
-  <% @outfit.items.each do |item| %>
-      <div>
-        <%= link_to image_tag(item.image), item_path(item) %>
-        <%= link_to "(x)", remove_item_outfit_path(@outfit, item_id: item.id), method: :post %>
-      </div>
-    <% end %>
-</section>
-    <fieldset>
-      <h3>Add Item</h3>
-      <%= form_tag(add_item_outfit_path(@outfit)) do %>
-        <%= label_tag "Item" %>
-        <%= select_tag(:item_id, options_for_select(Item.all.map{|i| ["#{i.description}", i.id]})) %>
-        <%= submit_tag "Add Item" %>
+    <% @outfit.items.each do |item| %>
+        <div>
+          <%= link_to image_tag(item.image), item_path(item) %>
+          <%= link_to "(x)", remove_item_outfit_path(@outfit, item_id: item.id), method: :post %>
+        </div>
       <% end %>
-    </fieldset>
+
+  </section>
+
+  <fieldset>
+    <%= form_tag(add_item_outfit_path(@outfit)) do %>
+      <%= select_tag(:item_id, options_for_select(Item.all.map{|i| ["#{i.description}", i.id]})) %>
+      <%= submit_tag "Add Item" %>
+    <% end %>
+  </fieldset>
+</section>

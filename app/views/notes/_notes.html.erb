@@ -1,0 +1,5 @@
+<div class="notes">
+  <% if @item.notes.length > 0 %>
+    <p>Notes</p>
+    <li class="notes"><%= render @item.notes %></li>
+  <% end %>

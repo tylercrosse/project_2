@@ -1,14 +1,14 @@
-body{
-  font-family: 'Poiret One', sans-serif;
+body {
+  font-family: dosis, sans-serif;
   font-weight: lighter;
   margin-top: 14vh;
   margin-left:0;
 }
-nav a, nav a:visited, nav a:hover{
+nav a, nav a:visited, nav a:hover {
   text-decoration: none;
   color:white;
 }
-header{
+header {
   font-family: 'Cinzel', serif;
   font-weight: normal;
   font-size: 7.5vh;
@@ -23,11 +23,11 @@ header{
   top:0;
   left:0;
 }
-header span{
+header span {
   font-size: 5.5vh;
 }
-nav{
-  font-family: dosis, sans-serif;
+nav {
+  font-family: 'Poiret One', sans-serif;
   font-size: 3vh;
   letter-spacing: 0.5vw;
   line-height: 5vh;
@@ -75,7 +75,6 @@ section.indexshow{
   display:flex;
   box-sizing: border-box;
 }
-
 section.indexshow img, section.indexshow a{
   height:inherit;
   margin:0;
@@ -89,8 +88,6 @@ section.indexshow img.thisitem{
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
   opacity: 1;
-  /*border-left: 3px solid black;
-  border-top: 3px solid black;*/
 }
 section.indexshow img:hover{
   -webkit-filter: grayscale(100%);
@@ -106,7 +103,7 @@ section.show{
   width:100vw;
   height:53vh;
   top:0;
-  padding: 1vw;
+  padding: 2vw;
   display:flex;
   box-sizing: border-box;
   font-size: 3.3vh;
@@ -130,17 +127,12 @@ section.edit{
 section.new, h2.new{
   padding-left: 2vw;
 }
-div.image{
+/*div.image{
   width:20%;
   height: inherit;
   top:0;
   left:0px;
   position:relative;
-}
-/*div.image img {
-  max-width: 90%;
-  max-height:90%;
-  padding: 5%;
 }*/
 div.specs, div.edit{
   width:45%;
@@ -172,6 +164,10 @@ span.tag a, span.tag a:visited{
 li.specs, li.notes{
   list-style: none;
 }
+li.description {
+  font-weight: bold;
+  font-size: 4vh;
+}
 div.note{
   background-color: black;
   color:white;
@@ -198,12 +194,54 @@ a.showtag:hover{
 a.deletetag:hover{
   font-size: 2vh;
 }
-span.notebody{
+span.body_note{
   margin-left: 2vw;
   font-size: 2.5vh;
 }
-span.note{
+span.update_note{
   font-style: italic;
   font-size: 1.5vh;
   display:block;
+}
+input:focus {
+  outline:none;
+}
+input[type=text]{
+  font-family: dosis, sans-serif;
+  background-color: rgb(230,230,230);
+  color:black;
+  border: 1px solid rgb(230,230,230);
+}
+input#note_body, input#tag_name, input#outfit_name{
+  font-family: dosis, sans-serif;
+  background-color: rgb(230,230,230);
+  color:black;
+  border: 1px solid rgb(230,230,230);
+  font-size:3vh;
+  display:inline;
+  width:15vw;
+}
+input[type=submit]{
+  font-family: dosis, sans-serif;
+  background-color: rgb(230,230,230);
+  color:black;
+  border: 1px solid rgb(230,230,230);
+  padding:1vw;
+  font-size: 3vh;
+  margin: 2vw;
+}
+fieldset{
+  width:70vw;
+  border:1px solid rgb(230,230,230);
+  background-color: black;
+  margin: 5vh auto;
+  text-align: center;
+  padding:3vw;
+}
+select{
+  font-size: 3vh;
+  font-family: dosis, sans-serif;
+  background-color: rgb(245,245,245);
+  color:black;
+  margin-right:5vw;
 }

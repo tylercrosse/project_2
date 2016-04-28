@@ -1,12 +1,12 @@
 <section class="new">
-  
-<h2>
-  Outfits
-</h2>
-  <%= link_to "New Outfit", new_outfit_path %>
+  <%= render 'new' %>
+</section>
 
-
-<% @outfits.each do |outfit| %>
-  <p><%= link_to outfit.name, outfit %></p>
-<% end %>
+<section class="show">
+  <div class="specs">
+    <h2>Outfits</h2>
+    <% @outfits.each do |outfit| %>
+      <p><%= link_to outfit.name, outfit %></p>
+    <% end %>
+  </div>
 </section>
