@@ -6,7 +6,10 @@
   <div class="specs">
     <h2>Outfits</h2>
     <% @outfits.each do |outfit| %>
-      <p><%= link_to outfit.name, outfit %></p>
+      <p>
+        <%= link_to outfit.name, outfit %>
+        <%= link_to 'x', outfit_path(outfit), method: :delete %>
+      </p>
     <% end %>
   </div>
 </section>

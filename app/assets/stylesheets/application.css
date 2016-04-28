@@ -64,6 +64,15 @@ section.index img, section.indexshow a{
   padding:0;
   align-content:space-around;
   }
+section.index a, section.index a:visited{
+  color:black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size:3.5vh;
+}
+section.index a:hover{
+  color:grey;
+}
 section.indexshow{
   width:99.9vw;
   height: 30vh;
@@ -245,3 +254,4 @@ select{
   color:black;
   margin-right:5vw;
 }
+section.index
