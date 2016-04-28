@@ -6,4 +6,6 @@ class Item < ActiveRecord::Base
   has_many :notes, dependent: :destroy
   has_many :taggings
 
+  has_many :styles
+  has_many :outfits, through: :styles
 end

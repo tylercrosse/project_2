@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427204218) do
+ActiveRecord::Schema.define(version: 20160428025915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(version: 20160427204218) do
 
   add_index "notes", ["item_id"], name: "index_notes_on_item_id", using: :btree
 
+  create_table "outfits", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "outfit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "styles", ["item_id"], name: "index_styles_on_item_id", using: :btree
+  add_index "styles", ["outfit_id"], name: "index_styles_on_outfit_id", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "item_id"
@@ -54,6 +70,8 @@ ActiveRecord::Schema.define(version: 20160427204218) do
   end
 
   add_foreign_key "notes", "items"
+  add_foreign_key "styles", "items"
+  add_foreign_key "styles", "outfits"
   add_foreign_key "taggings", "items"
   add_foreign_key "taggings", "tags"
 end
