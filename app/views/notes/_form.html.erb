@@ -1,4 +1,17 @@
 <%= form_for([@item, @item.notes.build]) do |f| %>
+  <% if notes.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(notes.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+         <% notes.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+         <% end %>
+       </ul>
+    </div>
+    <% end %>
 <%= f.text_field :body %>
 <%= f.submit "+ NOTE"%>
 <% end %>
