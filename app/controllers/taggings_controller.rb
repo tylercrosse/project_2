@@ -14,4 +14,11 @@ class TaggingsController < ApplicationController
       end
       redirect_to item_path(@item)
   end
+
+  def destroy
+    @item = Item.find(params[:item_id])
+    @tagging = @item.taggings.find(params[:id])
+    @tagging.destroy
+    redirect_to item_path(@item)
+  end
 end

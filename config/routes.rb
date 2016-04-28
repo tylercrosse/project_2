@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "items#index"
-  resources :tags
+  resources :tags, only: [:show]
     resources :items do
       require "carrierwave"
         get "closet", on: :collection
@@ -8,6 +8,6 @@ Rails.application.routes.draw do
         put "add_to_wishlist", on: :member
         put "add_to_closet", on: :member
       resources :notes
-      resources :taggings, only: [:new, :create]
+      resources :taggings, only: [:new, :create, :destroy]
     end
 end

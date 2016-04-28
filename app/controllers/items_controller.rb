@@ -52,10 +52,12 @@ def edit
 end
 
 def update
+
   @item = Item.find(params[:id])
   if @item.update(item_params)
     redirect_to @item, notice: "Item Successfully Changed"
   else
+    @items = Item.all
     render 'edit'
   end
 end

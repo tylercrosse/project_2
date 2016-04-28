@@ -35,8 +35,10 @@
       <%= render 'notes/form' %>
 
       <p>
-        Tags: <% @item.taggings.each do |tagging| %>
-          <span><%= link_to tagging.tag.name, tag_path(tagging.tag) %></span>
+        Tags <% @item.taggings.each do |tagging| %>
+          <span class="tag">
+            <%= link_to tagging.tag.name.downcase, tag_path(tagging.tag), :class =>"showtag" %><%= link_to 'x', [tagging.item, tagging],
+            method: :delete, :title => "Delete Tag", :class => "deletetag"%>
         <% end %>
       </p>
 
