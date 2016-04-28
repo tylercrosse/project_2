@@ -17,6 +17,7 @@
 
     <%= link_to 'Change', edit_item_path(@item) %>
     <%= link_to 'Discard', item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
+    <%= link_to 'Archive', add_to_archive_item_path(@item), method: :put%>
     <% if !@item.wishlist %>
       <%= link_to '+ Wishlist', add_to_wishlist_item_path(@item), method: :put%>
     <% else %>

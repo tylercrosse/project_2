@@ -4,15 +4,27 @@ def index
 end
 
 def closet
-  @items = Item.where(wishlist: false)
+  @items = Item.where(wishlist: false, archive: false)
   render :index
 end
 
 def add_to_closet
   @item = Item.find(params[:id])
-  @item.update(wishlist: false)
+  @item.update(:wishlist => false, :archive => false)
 
   redirect_to items_path, notice: "Item added to closet"
+end
+
+def archive
+  @items = Item.where(archive: true)
+  render :archive
+end
+
+def add_to_archive
+  @item = Item.find(params[:id])
+  @item.update(archive: true)
+
+  redirect_to items_path, notice: "Item added to archives"
 end
 
 def wishlist
@@ -28,7 +40,7 @@ def add_to_wishlist
 end
 
 def show
-  @items = Item.all
+  @items = Item.where(archive: false)
   @item = Item.find(params[:id])
   @tagging = Tagging.new
 end
@@ -57,7 +69,7 @@ def update
   if @item.update(item_params)
     redirect_to @item, notice: "Item Successfully Changed"
   else
-    @items = Item.all
+    @items = Item.where(archive: false)
     render 'edit'
   end
 end

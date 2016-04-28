@@ -13,8 +13,10 @@ Rails.application.routes.draw do
       require "carrierwave"
         get "closet", on: :collection
         get "wishlist", on: :collection
+        get "archive", on: :collection
         put "add_to_wishlist", on: :member
         put "add_to_closet", on: :member
+        put "add_to_archive", on: :member
       resources :notes
       resources :taggings, only: [:new, :create, :destroy]
     end
