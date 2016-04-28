@@ -1,0 +1,12 @@
+<section class="new">
+  
+<h2>
+  Outfits
+</h2>
+  <%= link_to "New Outfit", new_outfit_path %>
+
+
+<% @outfits.each do |outfit| %>
+  <p><%= link_to outfit.name, outfit %></p>
+<% end %>
+</section>

@@ -28,7 +28,7 @@ class OutfitsController  < ApplicationController
 
   def add_item
     @outfit = Outfit.find(params[:id])
-    @outfit.styles.create(item_id: params[:item_id]
+    @outfit.styles.create(item_id: params[:item_id])
     redirect_to @outfit
   end
 

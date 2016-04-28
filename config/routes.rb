@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   root "items#index"
+
+  resources :outfits, except: [:edit, :update] do
+    member do
+      post 'add_item'
+      post 'remove_item'
+    end
+  end
+
   resources :tags, only: [:show]
     resources :items do
       require "carrierwave"
