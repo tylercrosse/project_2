@@ -11,9 +11,8 @@
     <li class="specs">Size: <%= @item.size %></li>
   <% end %>
 
-  <% if @item.composition && @item.composition.length > 0 %>
     <li class="specs">Composition: <%= @item.composition %></li>
-  <% end %>
+
 
   <% if @item.garment_care && @item.garment_care.length > 0 %>
     <li class="specs">Care: <%= @item.garment_care %></li>
