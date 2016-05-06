@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-
+# inconsistent indentation across controllers
 def create
   @item = Item.find(params[:item_id])
   @note = @item.notes.create(note_params)

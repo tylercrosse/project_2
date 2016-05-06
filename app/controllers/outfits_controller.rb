@@ -10,6 +10,7 @@ class OutfitsController  < ApplicationController
 
   def create
     @outfit = Outfit.new(outfit_params)
+    # this will work much better with validations for outfits in the outfit model, also this code doesn't need to be indented
       if @outfit.save
         redirect_to @outfit
       else

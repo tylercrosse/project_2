@@ -8,6 +8,7 @@ def closet
   render :index
 end
 
+# nice use of custom actions paired with routes
 def add_to_closet
   @item = Item.find(params[:id])
   @item.update(:wishlist => false, :archive => false)
@@ -72,6 +73,7 @@ def update
     @items = Item.where(archive: false)
     render 'edit'
   end
+  # nice use of error handling paired with validations!
 end
 
 def destroy
@@ -83,5 +85,5 @@ end
 private
 def item_params
   params.require(:item).permit(:description, :image, :value, :brand, :size, :fabric, :garment_care, :wishlist)
-end
+end #this is a clue that everything above should be indented one level
 end

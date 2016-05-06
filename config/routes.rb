@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   end
 
   resources :tags, only: [:show]
+    # the next block doesn't need to be indented
     resources :items do
       require "carrierwave"
+        # nice use of custom routes
         get "closet", on: :collection
         get "wishlist", on: :collection
         get "archive", on: :collection
